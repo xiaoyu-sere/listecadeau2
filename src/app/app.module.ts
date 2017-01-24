@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { firebaseConfiguration } from '../environments/firebase';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from "angularfire2";
@@ -16,6 +17,8 @@ import { ParticiperStep2Component } from './participer-step2/participer-step2.co
 import { ParticiperStep3Component } from './participer-step3/participer-step3.component';
 import { AdminComponent } from './admin/admin.component';
 import { MaterialModule } from "@angular/material";
+import 'hammerjs';
+import { routes } from "./app.routes";
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { MaterialModule } from "@angular/material";
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfiguration),
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    RouterModule.forRoot(routes, {
+      useHash: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
