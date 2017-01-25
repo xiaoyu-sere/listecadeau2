@@ -1,6 +1,3 @@
-/**
- * Created by JulienSere on 24/01/2017.
- */
 // Import our dependencies
 import { Routes } from '@angular/router';
 import {CreateStep1Component} from "./create-step1/create-step1.component";
