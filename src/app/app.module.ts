@@ -16,7 +16,6 @@ import { ParticiperStep1Component } from './participer-step1/participer-step1.co
 import { ParticiperStep2Component } from './participer-step2/participer-step2.component';
 import { ParticiperStep3Component } from './participer-step3/participer-step3.component';
 import { AdminComponent } from './admin/admin.component';
-import { MaterialModule } from "@angular/material";
 import 'hammerjs';
 import { routes } from "./app.routes";
 
@@ -38,7 +37,6 @@ import { routes } from "./app.routes";
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfiguration),
-    MaterialModule.forRoot(),
     RouterModule.forRoot(routes, {
       useHash: true
     })

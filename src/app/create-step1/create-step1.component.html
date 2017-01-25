@@ -1,12 +1,15 @@
-<md-list style="height:100%">
-  <md-list-item>
-    <md-input-container style="width:100%;">
-      <input md-input placeholder="La liste de naissance de Célestin" value="La liste de naissance de ">
-    </md-input-container>
-  </md-list-item>
-  <md-list-item>
-    <md-input-container style="width:100%;">
-      <textarea md-input MdTextareaAutosize placeholder="Description" value="Sushi"></textarea>
-    </md-input-container>
-  </md-list-item>
-</md-list>
+<form>
+  <div class="form-group">
+    <label for="mail">Votre adresse mail</label>
+    <input type="email" class="form-control" id="mail" placeholder="xiaoyu.sere@gmail.com">
+  </div>
+  <div class="form-group">
+    <label for="titre">Titre de votre liste</label>
+    <input type="text" class="form-control" id="titre" placeholder="Liste de naissance de Léa">
+  </div>
+  <div class="form-group">
+    <label for="titre">Description de votre liste</label>
+    <textarea class="form-control" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-default">Créer la liste</button>
+</form>
