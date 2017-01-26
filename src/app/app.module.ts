@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { firebaseConfiguration } from '../environments/firebase';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AngularFireModule } from "angularfire2";
@@ -17,7 +17,20 @@ import { ParticiperStep2Component } from './participer-step2/participer-step2.co
 import { ParticiperStep3Component } from './participer-step3/participer-step3.component';
 import { AdminComponent } from './admin/admin.component';
 import 'hammerjs';
-import { routes } from "./app.routes";
+import { ListeService } from "./services/liste.service";
+
+
+const appRoutes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'creationEtape1',         component: CreateStep1Component },
+  { path: 'creationEtape2',         component: CreateStep2Component },
+  { path: 'creationEtape3',         component: CreateStep3Component },
+  { path: 'participerEtape1',       component: ParticiperStep1Component },
+  { path: 'participerEtape2',       component: ParticiperStep2Component },
+  { path: 'participerEtape3',       component: ParticiperStep3Component },
+  { path: 'admin',                  component: AdminComponent },
+  { path: '',   redirectTo: 'home', pathMatch: 'full' }
+];
 
 @NgModule({
   declarations: [
@@ -33,15 +46,13 @@ import { routes } from "./app.routes";
     AdminComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes, {useHash: true}),
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(firebaseConfiguration),
-    RouterModule.forRoot(routes, {
-      useHash: true
-    })
+    AngularFireModule.initializeApp(firebaseConfiguration)
   ],
-  providers: [],
+  providers: [ListeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

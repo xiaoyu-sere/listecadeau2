@@ -4,18 +4,44 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <input class="form-control" type="text"/>
-    <button type="button" class="btn btn-default" aria-label="Ajouter">
-      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>Ajouter
-    </button>
+    <input class="form-control" placeholder="Chauffe-biberon, Lit pliant, Porte-bébé..." required
+           [(ngModel)]="inputSouhaitLabel" name="souhaitLabel" #souhaitLabel="ngModel" type="text"/>
   </div>
 </div>
 
 <div class="row">
-  <div *ngFor="let souhait of model.souhaits" class="col-xs-12 col-md-6 col-lg-2">
-    {{souhait.label}}
-    <button type="button" class="btn btn-default" aria-label="Ajouter">
-      <span class="glyphicon glyphicon-delete" aria-hidden="true"></span>Ajouter
+  <div class="col-xs-12 text-center">
+    <button type="button" [disabled]="souhaitLabel.invalid" (click)="addItem()" class="btn btn-default" aria-label="Ajouter">
+      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Ajouter
+    </button>
+  </div>
+</div>
+
+
+<p>&nbsp;</p>
+
+<div *ngFor="let souhait of liste.souhaits">
+  <div class="row" style="margin-bottom:10px;">
+    <div style="line-height: 34px;" class="col-xs-6 text-right">{{souhait.label}}</div>
+    <div class="col-xs-6 text-left">
+      <button type="button" class="btn btn-default" (click)="supprimerItem(souhait.label)" aria-label="Supprimer">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+      </button>
+    </div>
+  </div>
+</div>
+
+<p>&nbsp;</p>
+
+<div class="row">
+  <div class="col-xs-6 text-center">
+    <button type="button" class="btn btn-default" aria-label="Ajouter" (click)="previousStep()">
+      <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span> Retour
+    </button>
+  </div>
+  <div class="col-xs-6 text-center">
+    <button type="button" class="btn btn-primary" aria-label="Ajouter" (click)="nextStep()">
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Ajouter
     </button>
   </div>
 </div>

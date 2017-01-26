@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   }
 
   createListOnClick(): void {
-    this.router.navigate(['/creation/1']);
+    this.router.navigate(['creationEtape1']);
   }
 
 }

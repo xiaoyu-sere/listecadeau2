@@ -8,14 +8,15 @@ import {ParticiperStep3Component} from "./participer-step3/participer-step3.comp
 import {ParticiperStep2Component} from "./participer-step2/participer-step2.component";
 import {HomeComponent} from "./home/home.component";
 
+
 // Define which component should be loaded based on the current URL
 export const routes: Routes = [
-  { path: '',       component: HomeComponent },
-  { path: 'home',   component: HomeComponent },
-  { path: 'creation/1',       component: CreateStep1Component },
-  { path: 'creation/2',       component: CreateStep2Component },
-  { path: 'creation/3',       component: CreateStep3Component },
-  { path: 'participer/1',       component: ParticiperStep1Component },
-  { path: 'participer/2',       component: ParticiperStep2Component },
-  { path: 'participer/3',       component: ParticiperStep3Component },
+  { path: 'home',                    component: HomeComponent },
+  { path: 'creation/etape1',         component: CreateStep1Component },
+  { path: 'creation/etape2',         component: CreateStep2Component },
+  { path: 'creation/etape3',         component: CreateStep3Component },
+  { path: 'participer/etape1',       component: ParticiperStep1Component },
+  { path: 'participer/etape2',       component: ParticiperStep2Component },
+  { path: 'participer/etape3',       component: ParticiperStep3Component },
+  { path: '**',                      component: HomeComponent },
 ];

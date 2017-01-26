@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Liste} from "../model/liste";
+import {ListeService} from "../services/liste.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-step1',
@@ -7,16 +9,25 @@ import {Liste} from "../model/liste";
 })
 export class CreateStep1Component implements OnInit {
 
-  public model:Liste = new Liste();
+  public liste:Liste = new Liste();
 
-  constructor() {
+  constructor(private router:Router, private listeService:ListeService) {
 
   }
 
   ngOnInit() {
-    this.model = new Liste();
-    this.model.souhaits=[];
+    this.liste = new Liste();
+    this.liste.mail = "xiaoyu.sere@gmail.com";
+    this.liste.souhaits=[];
   }
 
-  get diagnostic() { return JSON.stringify(this.model); }
+  nextStep():void {
+
+    // Sauvegarde du modele
+    this.listeService.liste = this.liste;
+
+    this.router.navigate(['creationEtape2']);
+  }
+
+  get diagnostic() { return JSON.stringify(this.liste); }
 }

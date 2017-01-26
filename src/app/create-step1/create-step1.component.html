@@ -1,18 +1,18 @@
-<form>
+<form #listeForm="ngForm">
   <div class="form-group">
     <label for="mail">Votre adresse mail</label>
-    <input type="email" [(ngModel)]="model.mail" name="mail" class="form-control" id="mail" placeholder="xiaoyu.sere@gmail.com" #mail="ngModel">
+    <input type="email" [(ngModel)]="liste.mail" required name="mail" class="form-control" id="mail" placeholder="xiaoyu.sere@gmail.com" #mail="ngModel">
     <div [hidden]="mail.valid ||  mail.pristine" class="alert alert-danger">L'e-mail est obligatoire</div>
   </div>
   <div class="form-group">
     <label for="titre">Titre de votre liste</label>
-    <input type="text" [(ngModel)]="model.titre" name="titre" class="form-control" id="titre" placeholder="Liste de naissance de Léa" #titre="ngModel">
+    <input type="text" [(ngModel)]="liste.titre" required name="titre" class="form-control" id="titre" placeholder="Liste de naissance de Léa" #titre="ngModel">
     <div [hidden]="titre.valid || titre.pristine" class="alert alert-danger">Le titre est obligatoire</div>
   </div>
   <div class="form-group">
     <label for="description">Description de votre liste</label>
-    <textarea id="description" class="form-control" name="description" [(ngModel)]="model.description" rows="3"></textarea>
+    <textarea id="description" class="form-control" name="description" [(ngModel)]="liste.description" rows="3"></textarea>
   </div>
-  {{diagnostic}}
-  <button type="submit" class="btn btn-default">Créer la liste</button>
+  <p class="text-center">{{diagnostic}}</p>
+  <p class="text-center"><button type="button" [disabled]="listeForm.form.invalid" class="btn btn-primary" (click)="nextStep()">Etape suivante</button></p>
 </form>
