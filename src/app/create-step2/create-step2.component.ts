@@ -3,6 +3,7 @@ import { Liste } from "../model/liste";
 import {Router} from "@angular/router";
 import {ListeService} from "../services/liste.service";
 import {Souhait} from "../model/souhait";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-create-step2',
@@ -26,6 +27,12 @@ export class CreateStep2Component implements OnInit {
       this.liste.souhaits.push(new Souhait("Lit pliant"));
       this.liste.souhaits.push(new Souhait("Doudou"));
       this.liste.souhaits.push(new Souhait("Sophie la Girafe"));
+    } else {
+      if(!environment.production) {
+        this.liste.souhaits.push(new Souhait("Lit pliant"));
+        this.liste.souhaits.push(new Souhait("Doudou"));
+        this.liste.souhaits.push(new Souhait("Sophie la Girafe"));
+      }
     }
   }
 

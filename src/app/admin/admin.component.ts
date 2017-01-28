@@ -11,16 +11,15 @@ import {ListeService} from "../services/liste.service";
 export class AdminComponent implements OnInit {
 
   items: FirebaseListObservable<any[]>;
+  selected:any;
 
-  constructor(private af: AngularFire) {
+  constructor(private af: AngularFire, private listeService:ListeService) {
   }
 
   ngOnInit() {
-
     this.items = this.af.database.list('/listes');
-
-    this.items.push(new Liste(ListeService.generateRandomId(), "Test 1")).then(res => window.alert('res :' + res));
-
   }
+
+
 
 }

@@ -22,13 +22,13 @@ import { ListeService } from "./services/liste.service";
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'creationEtape1',         component: CreateStep1Component },
-  { path: 'creationEtape2',         component: CreateStep2Component },
-  { path: 'creationEtape3',         component: CreateStep3Component },
-  { path: 'participerEtape1',       component: ParticiperStep1Component },
-  { path: 'participerEtape2',       component: ParticiperStep2Component },
-  { path: 'participerEtape3',       component: ParticiperStep3Component },
-  { path: 'admin',                  component: AdminComponent },
+  { path: 'creationEtape1',                component: CreateStep1Component },
+  { path: 'creationEtape2',                component: CreateStep2Component },
+  { path: 'creationEtape3',                component: CreateStep3Component },
+  { path: 'participer/1/:token',       component: ParticiperStep1Component },
+  { path: 'participerEtape2',              component: ParticiperStep2Component },
+  { path: 'participerEtape3',              component: ParticiperStep3Component },
+  { path: 'admin',                         component: AdminComponent },
   { path: '',   redirectTo: 'home', pathMatch: 'full' }
 ];
 

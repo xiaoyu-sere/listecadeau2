@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ListeService} from "../services/liste.service";
+import {Liste} from "../model/liste";
 
 @Component({
   selector: 'app-listes',
@@ -6,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListesComponent implements OnInit {
 
-  constructor() { }
+
+  private listes:Liste[];
+
+  constructor(private listeService:ListeService) { }
 
   ngOnInit() {
+    this.listeService.items.subscribe(liste => this.listes = liste);
   }
 
 }
