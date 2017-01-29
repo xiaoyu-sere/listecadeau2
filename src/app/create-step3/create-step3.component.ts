@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ListeService} from "../services/liste.service";
 import {Router} from "@angular/router";
 import {Liste} from "../model/liste";
@@ -10,25 +10,40 @@ import {AngularFire} from "angularfire2";
 })
 export class CreateStep3Component implements OnInit {
 
-  liste:Liste;
+  liste: Liste;
   message = "";
+  foundKey: string;
+  listes: Liste[];
 
-  constructor(private router:Router, private listeService:ListeService) { }
+  constructor(private router: Router, private listeService: ListeService) {
+  }
 
   ngOnInit() {
     this.liste = this.listeService.liste;
-    if(this.liste.titre == null || this.liste.titre == "") {
+    if (this.liste.titre == null || this.liste.titre == "") {
       this.router.navigate(["creationEtape1"]);
     }
   }
 
-  persistOK(data:any) {
-    this.message = "La liste a bien été enregistré. Vous pouvez maintenant la partager !";
+  persistOK(data: any) {
+    this.message = "La liste a bien été enregistrée. Vous pouvez maintenant la partager !";
     console.log(data);
-    //this.listeService.items.map(lists => lists.filter(l => l.titre == this.liste.titre).map(filteredList => this.key = filteredList.$key));
+    this.listeService.items.subscribe(result => {
+      this.foundKey = this.getKey(result);
+    });
   }
 
-  persistKO(data:any) {
+  getKey(value: Liste[]):string {
+    for(let uneListe of value) {
+      if(uneListe.titre == this.liste.titre) {
+        return uneListe.$key;
+      }
+    }
+    //console.log(JSON.stringify(value));
+    //  map(lists => lists.filter(l => l.titre == this.liste.titre).map(filteredList => this.key = filteredList.$key));
+  }
+
+  persistKO(data: any) {
     this.message = "Erreur de sauvegarde de la liste dans la base de données.";
   }
 

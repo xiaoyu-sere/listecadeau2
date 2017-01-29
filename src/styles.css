@@ -1,13 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
-
 body {
   margin: 0;
   padding-top: 60px;
 }
 
 .form-control {
-
   border-radius: 0;
   box-shadow:0;
+}
 
+.btn {
+  border-radius: 0;
+}
+
+.main {
+  margin-bottom:20px;
+}
+
+footer {
+  position: absolute;
+  bottom:0;
+  left:0;
+  right: 0;
 }

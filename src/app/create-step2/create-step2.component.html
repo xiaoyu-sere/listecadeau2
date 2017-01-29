@@ -1,41 +1,53 @@
 <div class="row">
-  <div class="col-xs-12 text-center">Remplisser votre liste</div>
+  <div class="col-xs-12 text-center"><h2>Votre liste</h2></div>
 </div>
 
 <div class="row">
-  <div class="col-md-offset-4 col-xs-4">
+  <div class="col-xs-offset-0 col-sm-offset-2 col-md-offset-4 col-xs-8 col-sm-6 col-md-4">
     <input class="form-control" placeholder="Chauffe-biberon, Lit pliant, Porte-bébé..." required
            [(ngModel)]="inputSouhaitLabel" name="souhaitLabel" #souhaitLabel="ngModel" type="text"/>
   </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">&nbsp;</div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12 text-center">
-    <button type="button" [disabled]="souhaitLabel.invalid" (click)="addItem()" class="btn btn-default" aria-label="Ajouter">
+  <div class="col-xs-2 col-sm-2 col-md-4">
+    <button type="button" [disabled]="souhaitLabel.invalid" (click)="addItem()" class="btn btn-default"
+            aria-label="Ajouter">
       <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Ajouter
     </button>
   </div>
 </div>
 
+<div class="row">
+  <div class="col-xs-12 text-center">&nbsp;</div>
+</div>
 
-<p>&nbsp;</p>
+<div class="row">
+  <div class="col-xs-offset-0 col-sm-offset-2 col-xs-12 col-sm-8">
+    <ul class="list-group">
+      <li *ngFor="let souhait of liste.souhaits" class="list-group-item">
+        <div class="list-group-item-text row">
+          <div class="col-xs-6" style="line-height: 34px;">{{souhait.label}}</div>
+          <div class="col-xs-6 text-right">
+            <button type="button" class="btn btn-danger" (click)="supprimerItem(souhait.label)" aria-label="Supprimer">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
 
+<!--
 <div *ngFor="let souhait of liste.souhaits">
   <div class="row" style="margin-bottom:10px;">
     <div style="line-height: 34px;" class="col-xs-6 text-right">{{souhait.label}}</div>
     <div class="col-xs-6 text-left">
-      <button type="button" class="btn btn-default" (click)="supprimerItem(souhait.label)" aria-label="Supprimer">
-        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+      <button type="button" class="btn btn-danger" (click)="supprimerItem(souhait.label)" aria-label="Supprimer">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
       </button>
     </div>
   </div>
 </div>
-
-<p>&nbsp;</p>
+-->
 
 <div class="row">
   <div class="col-xs-6 text-center">
