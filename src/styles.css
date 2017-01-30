@@ -13,12 +13,10 @@ body {
 }
 
 .main {
-  margin-bottom:20px;
+  margin-bottom:10px;
 }
 
 footer {
-  position: absolute;
-  bottom:0;
   left:0;
   right: 0;
 }

@@ -16,4 +16,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['creationEtape1']);
   }
 
+  listesOnClick(): void {
+    this.router.navigate(['listes']);
+  }
+
 }

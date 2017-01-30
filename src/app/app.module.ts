@@ -29,6 +29,7 @@ const appRoutes: Routes = [
   { path: 'participer/2',                  component: ParticiperStep2Component },
   { path: 'participer/3/',                 component: ParticiperStep3Component },
   { path: 'admin',                         component: AdminComponent },
+  { path: 'listes',                        component: ListesComponent },
   { path: '',   redirectTo: 'home', pathMatch: 'full' }
 ];
 

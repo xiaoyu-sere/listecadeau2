@@ -13,9 +13,9 @@ import {Liste} from "../model/liste";
 })
 export class ParticiperStep1Component implements OnInit {
 
-  token = '';
+  token = '-Kbc1_q80C0JiCJ9pfSw';
   items: FirebaseListObservable<any[]>;
-  _liste:any;
+  liste:Liste;
 
   constructor(private listeService: ListeService,
               private router: Router,
@@ -25,20 +25,11 @@ export class ParticiperStep1Component implements OnInit {
   }
 
   ngOnInit() {
-    this.items = this.af.database.list('/listes');
     this.route.params.switchMap((params: Params) => this.token = params['token']).subscribe();
   }
 
-  get liste() {
-    return this._liste;
-  }
-
-  set liste(val:any) {
-    this._liste = val;
-  }
-
   updateFilter() {
-    this.items.filter(value => value.id == this.token).map(value => this.liste = value);
+    this.listeService.items.filter(value => value.id == this.token).map(value => this.liste = value);
   }
 
 }

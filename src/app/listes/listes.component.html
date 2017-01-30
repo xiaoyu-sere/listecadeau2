@@ -1,5 +1,13 @@
-<h2>Listes</h2>
 
-<div *ngFor="let liste of listes">
-  <p>{{liste.titre}}</p>
+<div class="row">
+  <div class="col-xs-12 text-center"><h2>Listes</h2></div>
 </div>
+
+<div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
+  <div class="">
+    <ul class="list-group">
+      <li *ngFor="let liste of listes" class="list-group-item">{{liste.titre}}</li>
+    </ul>
+  </div>
+</div>
+

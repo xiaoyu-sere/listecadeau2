@@ -1,7 +1,47 @@
-<p>
-  participer-step1 works!
-</p>
-
 <p>liste : {{liste | json}}</p>
 
 <p>token : {{token}}</p>
+
+
+<div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
+  <div class="text-center"><h2>{{liste.titre}}</h2></div>
+</div>
+
+<div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
+  <div class="panel panel-default">
+    <div class="panel-heading"><strong>{{liste.titre}}</strong></div>
+    <div class="panel-body" *ngIf="liste.description">{{liste.description}}</div>
+    <div class="panel-body" *ngIf="!liste.description">Aucune description</div>
+  </div>
+</div>
+
+<div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
+  <label for="participant">Votre nom</label>
+  <input type="text" [(ngModel)]="participant" required name="participant" class="form-control" id="participant" placeholder="Nicolas" #participant="ngModel">
+  <div [hidden]="participant.valid || participant.pristine" class="alert alert-danger">Vous devez saisir votre nom pour que le propriétaire de la liste puisse savoir qui a participé.</div>
+</div>
+
+<div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
+  <div class="panel panel-default">
+    <div class="panel-heading">Votre nom</div>
+    <div class="panel-body">{{liste.mail}}</div>
+  </div>
+</div>
+
+<div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
+  <div class="">
+    <ul class="list-group">
+      <li *ngFor="let souhait of liste.souhaits" class="list-group-item">{{souhait.label}}</li>
+    </ul>
+  </div>
+</div>
+
+<div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4 text-justify">
+  <div class="text-center">
+    <button class="btn btn-success" (click)="persistListe()">
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Valider
+    </button>
+  </div>
+</div>
+
+
