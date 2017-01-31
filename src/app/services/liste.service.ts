@@ -8,11 +8,13 @@ import ThenableReference = firebase.database.ThenableReference;
 export class ListeService {
 
   items: FirebaseListObservable<Liste[]>;
+  _listes: Liste[];
 
   currentListe:any;
 
   constructor(private af:AngularFire) {
     this.items = this.af.database.list('/listes');
+    this.items.subscribe(x => this.listes = x);
   }
 
   private _liste: Liste = new Liste();
@@ -23,9 +25,16 @@ export class ListeService {
     return this._liste;
   }
 
+  get listes() {
+    return this._listes;
+  }
+
+  set listes(val:any) {
+    console.log('set listes');
+    this._listes = val;
+  }
+
   set liste(val: Liste) {
-    console.log('set liste');
-    console.log(val);
     this._liste = val;
   }
 
