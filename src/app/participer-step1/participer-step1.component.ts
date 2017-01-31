@@ -42,4 +42,28 @@ export class ParticiperStep1Component implements OnInit {
     }
   }
 
+  canValidate() {
+    let result = false;
+    if (this.participant.length > 0) {
+      for (let souhait of this.liste.souhaits) {
+        if (souhait.reserved) {
+          result = true;
+        }
+      }
+    }
+    return result;
+  }
+
+  persistChange() {
+    this.listeService.items.update(this.liste.$key, this.liste);
+  }
+
+  persistChangeOK() {
+    console.log('OK');
+  }
+
+  persistChangeKO() {
+    console.log('KO');
+  }
+
 }

@@ -1,6 +1,7 @@
 <div [hidden]="!loading" class="loading">
   <div class="row col-xs-12">
     <div class="spinner"></div>
+    <p style="text-align: center; margin-bottom: 20px;">Chargement en cours...</p>
   </div>
 </div>
 <div [hidden]="loading">
@@ -29,10 +30,13 @@
 
   <div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
       <ul class="list-group">
+        <li class="list-group-item active">Cocher le ou les cadeaux que vous souhaitez offrir</li>
         <li *ngFor="let souhait of liste.souhaits" class="list-group-item">
           <div class="list-group-item-text">
             <div style="display:inline-block; width:48%;">{{souhait.label}}</div>
-            <div style="display:inline-block; width:48%; text-align: right"><input type="checkbox" /></div>
+            <div style="display:inline-block; width:48%; text-align: right">
+                J'offre ce cadeau <input type="checkbox" [(ngModel)]="souhait.reserved" />
+            </div>
           </div>
         </li>
       </ul>
@@ -47,7 +51,7 @@
 
   <div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4 text-justify">
     <div class="text-center">
-      <button class="btn btn-success" (click)="persistListe()">
+      <button class="btn btn-success" [disabled]="!canValidate()" (click)="persistChange()">
         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Valider
       </button>
     </div>

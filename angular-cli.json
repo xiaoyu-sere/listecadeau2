@@ -20,7 +20,8 @@
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../node_modules/bootstrap/dist/css/bootstrap-theme.css",
-        "styles.css"
+        "styles.css",
+        "checkbox.css"
       ],
       "scripts": [],
       "environments": {
