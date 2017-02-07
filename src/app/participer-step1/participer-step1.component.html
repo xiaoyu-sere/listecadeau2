@@ -42,7 +42,7 @@
       </ul>
   </div>
 
-  <div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
+  <div [hidden]="devmode" class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
     <div class="panel panel-default">
       <div class="panel-heading">Debug</div>
       <div class="panel-body">{{liste | json }}</div>

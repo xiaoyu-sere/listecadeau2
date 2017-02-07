@@ -15,4 +15,15 @@ export class Liste {
     this.souhaits = souhaits || [];
     this.creation = Date.now();
   }
+
+  static copy(liste:Liste) {
+    let newListe = new Liste();
+    newListe.creation = liste.creation;
+    newListe.description = liste.description || "";
+    newListe.mail = liste.mail  || "";
+    newListe.souhaits = liste.souhaits || [];
+    newListe.titre = liste.titre || "";
+    newListe.token = liste.token || "";
+    return newListe;
+  }
 }

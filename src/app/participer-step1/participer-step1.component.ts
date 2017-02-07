@@ -6,6 +6,7 @@ import {ActivatedRoute, Params}   from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import {AngularFire, FirebaseListObservable} from "angularfire2";
 import {Liste} from "../model/liste";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-participer-step1',
@@ -17,6 +18,7 @@ export class ParticiperStep1Component implements OnInit {
   liste = new Liste();
   loading = true;
   participant = '';
+  devmode = environment.production;
 
   constructor(private listeService: ListeService,
               private router: Router,
@@ -55,14 +57,19 @@ export class ParticiperStep1Component implements OnInit {
   }
 
   persistChange() {
-    this.listeService.items.update(this.liste.$key, this.liste);
+    this.loading = true;
+    let cleanedListe = Liste.copy(this.liste);
+    this.listeService.items.update(this.liste.$key, cleanedListe).then(x => this.persistChangeOK(), r => this.persistChangeKO());
   }
 
   persistChangeOK() {
+    this.loading = false;
     console.log('OK');
+    this.router.navigate(['participer/2']);
   }
 
   persistChangeKO() {
+    this.loading = false;
     console.log('KO');
   }
 

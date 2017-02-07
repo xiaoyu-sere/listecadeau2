@@ -25,6 +25,10 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-xs-12">Vous devez saisir votre nom pour valider votre participation</div>
+</div>
+
 <div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4 text-justify">
   <div class="text-center">
     <button class="btn btn-success" (click)="persistListe()">
@@ -33,16 +37,14 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="col-xs-12">&nbsp;</div>
-</div>
+
 
 <div *ngIf="message" class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
   <div class="panel panel-success">
     <div class="panel-heading">Enregistrement réussi</div>
     <div class="panel-body">
       La liste a bien été enregistrée. Vous pouvez maintenant la partager !<br/>
-      Le lien est le suivant : <a href="#">http://localhost/#/participer/1/${{foundKey}}</a>
+      Le lien est le suivant : <a href="./#/participer/1/${{foundKey}}">http://localhost/#/participer/1/${{foundKey}}</a>
     </div>
   </div>
 </div>

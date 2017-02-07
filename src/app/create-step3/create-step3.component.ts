@@ -39,8 +39,6 @@ export class CreateStep3Component implements OnInit {
         return uneListe.$key;
       }
     }
-    //console.log(JSON.stringify(value));
-    //  map(lists => lists.filter(l => l.titre == this.liste.titre).map(filteredList => this.key = filteredList.$key));
   }
 
   persistKO(data: any) {
