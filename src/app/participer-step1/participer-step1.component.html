@@ -7,11 +7,11 @@
 <div [hidden]="loading">
   <div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
     <div class="text-center"><h2>{{liste.titre}}</h2></div>
+    <div class="text-center"><h3>{{liste.proprietaire}}</h3></div>
   </div>
 
   <div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
     <div class="panel panel-default">
-      <div class="panel-heading"><strong>{{liste.titre}}</strong></div>
       <div class="panel-body" *ngIf="liste.description">{{liste.description}}</div>
       <div class="panel-body" *ngIf="!liste.description">Aucune description</div>
     </div>
