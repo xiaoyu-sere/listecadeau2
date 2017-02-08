@@ -17,7 +17,7 @@ export class ParticiperStep1Component implements OnInit {
   token = '-Kbc1_q80C0JiCJ9pfSw';
   liste = new Liste();
   loading = true;
-  participant = '';
+  participant = 'Julien';
   devmode = environment.production;
 
   constructor(private listeService: ListeService,

@@ -7,8 +7,8 @@
     <ul class="list-group">
       <li *ngFor="let liste of listes" class="list-group-item">
         <div class="list-group-item-text row">
-          <div class="col-xs-6" style="line-height: 34px;">{{liste.titre}}</div>
-          <div class="col-xs-6 text-right">
+          <div class="col-xs-10" style="line-height: 34px;">{{liste.titre}}</div>
+          <div class="col-xs-2 text-right">
             <a class="btn btn-default" (click)="goToListe(liste.$key)" aria-label="Voir la liste">
               <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
             </a>
