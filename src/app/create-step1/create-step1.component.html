@@ -1,5 +1,10 @@
 <form #listeForm="ngForm">
   <div class="form-group">
+    <label for="titre">Votre nom</label>
+    <input type="text" [(ngModel)]="liste.proprietaire" required name="proprietaire" class="form-control" id="proprietaire" placeholder="Jean" #proprietaire="ngModel">
+    <div [hidden]="proprietaire.valid || proprietaire.pristine" class="alert alert-danger">Votre nom est obligatoire</div>
+  </div>
+  <div class="form-group">
     <label for="mail">Votre adresse mail</label>
     <input type="email" [(ngModel)]="liste.mail" required name="mail" class="form-control" id="mail" placeholder="xiaoyu.sere@gmail.com" #mail="ngModel">
     <div [hidden]="mail.valid ||  mail.pristine" class="alert alert-danger">L'e-mail est obligatoire</div>

@@ -2,6 +2,7 @@ import {Souhait} from "./souhait";
 export class Liste {
   public $key: string;
   public titre: string;
+  public proprietaire: string;
   public mail: string;
   public description: string;
   public souhaits: Souhait[];
@@ -10,6 +11,7 @@ export class Liste {
 
   constructor(titre?, mail?, description?, souhaits?) {
     this.titre = titre;
+    this.proprietaire = "";
     this.mail = mail || "xiaoyu.sere@gmail.com";
     this.description = description || "";
     this.souhaits = souhaits || [];
@@ -24,6 +26,7 @@ export class Liste {
     newListe.souhaits = liste.souhaits || [];
     newListe.titre = liste.titre || "";
     newListe.token = liste.token || "";
+    newListe.proprietaire = liste.proprietaire || "";
     return newListe;
   }
 }
