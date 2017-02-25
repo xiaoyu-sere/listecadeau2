@@ -18,6 +18,7 @@ import { ParticiperStep3Component } from './participer-step3/participer-step3.co
 import { AdminComponent } from './admin/admin.component';
 import 'hammerjs';
 import { ListeService } from "./services/liste.service";
+import {AboutComponent} from "./about/about.component";
 
 
 const appRoutes: Routes = [
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'participer/2',                  component: ParticiperStep2Component },
   { path: 'participer/3/',                 component: ParticiperStep3Component },
   { path: 'admin',                         component: AdminComponent },
+  { path: 'about',                         component: AboutComponent },
   { path: 'listes',                        component: ListesComponent },
   { path: '',   redirectTo: 'home', pathMatch: 'full' }
 ];
@@ -44,7 +46,8 @@ const appRoutes: Routes = [
     ParticiperStep1Component,
     ParticiperStep2Component,
     ParticiperStep3Component,
-    AdminComponent
+    AdminComponent,
+    AboutComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {useHash: true}),
