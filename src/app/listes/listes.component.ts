@@ -24,4 +24,9 @@ export class ListesComponent implements OnInit {
     this.router.navigate([link]);
   }
 
+  supprimerListe(key:string) {
+    let link = '/supprimer/'+encodeURIComponent(key);
+    this.router.navigate([link]);
+  }
+
 }

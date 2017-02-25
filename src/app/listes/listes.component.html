@@ -7,11 +7,16 @@
     <ul class="list-group">
       <li *ngFor="let liste of listes" class="list-group-item">
         <div class="list-group-item-text row">
-          <div class="col-xs-10" style="line-height: 34px;">{{liste.titre}}</div>
-          <div class="col-xs-2 text-right">
-            <a class="btn btn-default" (click)="goToListe(liste.$key)" aria-label="Voir la liste">
+          <div class="col-xs-7 overflow" style="line-height: 34px;">{{liste.titre}}</div>
+          <div class="col-xs-5 text-right">
+            <div class="btn-group">
+            <button class="btn btn-default" (click)="goToListe(liste.$key)" aria-label="Voir la liste">
               <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-            </a>
+            </button>
+            <button class="btn btn-danger" (click)="supprimerListe(liste.$key)" aria-label="Supprimer la liste">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+            </div>
           </div>
         </div>
       </li>

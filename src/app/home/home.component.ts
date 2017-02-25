@@ -20,4 +20,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['listes']);
   }
 
+  aboutOnClick(): void {
+    this.router.navigate(['about']);
+  }
+
 }
