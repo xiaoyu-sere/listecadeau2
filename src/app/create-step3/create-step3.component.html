@@ -25,16 +25,22 @@
   </div>
 </div>
 
+<!--
 <div class="row">
-  <div class="col-xs-12 text-center">Vous devez saisir votre nom pour valider votre participation</div>
+  <div class="col-xs-12 text-center text-danger">Vous devez saisir votre nom pour valider votre participation</div>
 </div>
+-->
 
 <div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4 text-justify">
   <div class="text-center">
-    <button class="btn btn-success" (click)="persistListe()">
+    <button class="btn btn-success full" (click)="persistListe()">
       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Valider
     </button>
   </div>
+</div>
+
+<div *ngIf="message" class="row col-xs-12">
+  &nbsp;
 </div>
 
 <div *ngIf="message" class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
@@ -42,7 +48,7 @@
     <div class="panel-heading">Enregistrement réussi</div>
     <div class="panel-body">
       La liste a bien été enregistrée. Vous pouvez maintenant la partager !<br/>
-      Le lien est le suivant : <a href="./#/participer/1/${{foundKey}}">http://localhost/#/participer/1/${{foundKey}}</a>
+      Le lien est le suivant : <a href="https://xiaoyu-sere.github.io/#/participer/1/${{foundKey}}">https://xiaoyu-sere.github.io/#/participer/1/${{foundKey}}</a>
     </div>
   </div>
 </div>

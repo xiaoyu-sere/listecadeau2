@@ -10,7 +10,7 @@
     <div class="text-center"><h3>{{liste.proprietaire}}</h3></div>
   </div>
 
-  <div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
+  <div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4" *ngIf="!liste.description">
     <div class="panel panel-default">
       <div class="panel-body" *ngIf="liste.description">{{liste.description}}</div>
       <div class="panel-body" *ngIf="!liste.description">Aucune description</div>
@@ -44,7 +44,7 @@
 
   <div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4 text-justify">
     <div class="text-center">
-      <button class="btn btn-success" [disabled]="!canValidate()" (click)="persistChange()">
+      <button class="btn btn-success full" [disabled]="!canValidate()" (click)="persistChange()">
         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Valider
       </button>
     </div>
