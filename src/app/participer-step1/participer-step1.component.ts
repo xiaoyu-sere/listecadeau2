@@ -24,7 +24,7 @@ export class ParticiperStep1Component implements OnInit {
               private router: Router,
               private route: ActivatedRoute,
               private af: AngularFire,
-              private location: Location,) {
+              private location: Location) {
   }
 
   ngOnInit() {

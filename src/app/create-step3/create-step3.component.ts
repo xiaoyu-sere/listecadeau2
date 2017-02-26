@@ -11,7 +11,7 @@ import {AngularFire} from "angularfire2";
 export class CreateStep3Component implements OnInit {
 
   liste: Liste;
-  message = "";
+  message:boolean|string = false;
   foundKey: string;
   listes: Liste[];
 

@@ -1,28 +1,19 @@
-<!--
-<div [hidden]="!loading" class="loading">
-  <div class="row col-xs-12">
-    <div class="spinner"></div>
-    <p style="text-align: center; margin-bottom: 20px;">Validé !</p>
+<div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
+  <div class="panel panel-success">
+    <div class="panel-heading">Merci !</div>
+    <div class="panel-body">
+      <div class="text-center text-success" style="font-size:6em;">
+        <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+      </div>
+      <p class="text-center text-success">Votre participation est validée !</p>
+
+      <p class="text-center text-success">Vous pouvez envoyer un mail au créateur de la liste pour le prévenir de votre participation</p>
+
+      <p class="text-center text-success">
+        <a class="btn btn-primary full" [href]="'mailto:' + mailString" aria-label="Envoyer un mail">
+          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Prévenir {{liste.proprietaire}}
+        </a>
+      </p>
+    </div>
   </div>
 </div>
--->
-
-<div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
-  <div class="text-center"><h2>Informer le propriétaire de la liste</h2></div>
-</div>
-
-<div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
-  <div class="text-center">
-    <p class="bg-success">
-      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Votre participation est validé !
-    </p>
-  </div>
-</div>
-
-<div class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
-  <div class="text-center">
-    <a href="mailto:xiaoyu.sere@gmail.com?Subject=Participation%20%E0%20votre%20liste&Body=Bonjour%2C%20SOMEONE%20vient%20de%20participer%20%E0%20votre%20liste.%20Vous%20pouvez%20consulter%20le%20r%E9sultat%20via%20ce%20lien%20%3A%20http%3A//localhost%3A4200/%23/participer/1/-KbvHay-sVETQoGFTjJT">Informer le {{liste.titre}}</a>
-  </div>
-</div>
-
-
