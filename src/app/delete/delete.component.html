@@ -1,0 +1,30 @@
+<div [hidden]="!loading" class="loading">
+  <div class="row col-xs-12">
+    <div class="spinner"></div>
+    <p style="text-align: center; margin-bottom: 20px;">Suppression en cours...</p>
+  </div>
+</div>
+
+<div *ngIf="result" class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
+  <div class="panel panel-success">
+    <div class="panel-heading">Suppression réussie</div>
+    <div class="panel-body">
+      <div class="text-center text-success" style="font-size:6em;">
+        <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+      </div>
+      <p class="text-center text-success">La liste {{liste.titre}} a bien été supprimée.</p>
+    </div>
+  </div>
+</div>
+
+<div [hidden]="result||loading" class="row col-xs-offset-0 col-lg-offset-4 col-xs-12 col-lg-4">
+  <div class="panel panel-danger">
+    <div class="panel-heading">Erreur technique</div>
+    <div class="panel-body">
+      <div class="text-center text-danger" style="font-size:6em;">
+        <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+      </div>
+      <p class="text-center text-danger">{{message}}</p>
+    </div>
+  </div>
+</div>

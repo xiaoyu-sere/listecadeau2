@@ -19,6 +19,7 @@ import { AdminComponent } from './admin/admin.component';
 import 'hammerjs';
 import { ListeService } from "./services/liste.service";
 import {AboutComponent} from "./about/about.component";
+import {DeleteComponent} from "./delete/delete.component";
 
 
 const appRoutes: Routes = [
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
   { path: 'participer/3/',                 component: ParticiperStep3Component },
   { path: 'admin',                         component: AdminComponent },
   { path: 'about',                         component: AboutComponent },
+  { path: 'supprimer/:token',                 component: DeleteComponent },
   { path: 'listes',                        component: ListesComponent },
   { path: '',   redirectTo: 'home', pathMatch: 'full' }
 ];
@@ -47,7 +49,8 @@ const appRoutes: Routes = [
     ParticiperStep2Component,
     ParticiperStep3Component,
     AdminComponent,
-    AboutComponent
+    AboutComponent,
+    DeleteComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {useHash: true}),
